@@ -1,237 +1,499 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexLyn AI Solutions - Agents IA Personnalisés</title>
-<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-<link rel="icon" href="assets/favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-    font-family: 'Exo 2', sans-serif;
-    background: #000;
-    color: #e0e0e0;
-    line-height: 1.7;
-    overflow-x: hidden;
-    padding-top: 80px;
-}
-a { text-decoration: none; color: inherit; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-h1,h2,h3 { font-family: 'Orbitron', sans-serif; }
+    <!-- SEO Meta Tags -->
+    <title>NexLyn AI Solutions - Agents IA Personnalisés pour PME, Artisans & Entrepreneurs</title>
+    <meta name="description" content="NexLyn AI Solutions propose des agents IA sur mesure pour automatiser vos appels, réseaux sociaux, e-commerce, marketing, support client, comptabilité et contenu. Tarifs premium accessibles pour PME et entrepreneurs en France.">
+    <meta name="keywords" content="agents IA, IA personnalisée, automatisation PME, chatbot appels, gestion réseaux sociaux IA, agent e-commerce, intelligence artificielle France">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NexLyn AI Solutions">
 
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.92);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 1.2rem 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.15);
-}
-nav.scrolled { padding: 0.8rem 0; box-shadow: 0 6px 20px rgba(0,212,255,0.2); }
-nav ul {
-    display: flex; justify-content: center; list-style: none; flex-wrap: wrap; gap:1.2rem;
-}
-nav li { margin:0; }
-nav a { color: #00d4ff; font-weight:600; font-size:1.05rem; padding:0.5rem 1rem; transition:color 0.3s;}
-nav a:hover { color:#00ff9d; }
+    <!-- Open Graph -->
+    <meta property="og:title" content="NexLyn AI Solutions - Agents IA pour booster votre activité">
+    <meta property="og:description" content="Automatisez intelligemment vos tâches quotidiennes avec des agents IA adaptés aux artisans, PME et entrepreneurs. Consultation gratuite.">
+    <meta property="og:image" content="https://nexlyn-ai.com/assets/logo.jpg">
+    <meta property="og:url" content="https://nexlyn-ai.com">
+    <meta property="og:type" content="website">
 
-/* Hero Section */
-#hero {
-    min-height: calc(100vh - 80px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(135deg, #000 0%, #001122 100%);
-    position: relative;
-    overflow: hidden;
-}
-#hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%2300d4ff" stroke-width="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-    opacity:0.08;
-    pointer-events:none;
-    z-index:1;
-}
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 960px;
-}
-.hero-content h1 {
-    font-size:4.8rem;
-    background: linear-gradient(45deg, #00d4ff,#00ff9d);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    margin-bottom:1.2rem;
-}
-.hero-content p {
-    font-size:1.6rem;
-    margin:0 auto 2.5rem auto;
-    max-width:760px;
-    color:#ccc;
-}
-.cta {
-    background: linear-gradient(45deg, #00d4ff,#00ff9d);
-    color:#000;
-    padding:1.2rem 2.8rem;
-    border-radius:50px;
-    font-weight:700;
-    font-size:1.3rem;
-    transition:all 0.3s;
-    display:inline-block;
-    cursor:pointer;
-}
-.cta:hover { transform:scale(1.06); box-shadow:0 0 30px rgba(0,212,255,0.5); }
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: #000;
+            color: #e0e0e0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
 
-section { padding:6rem 0; }
-section h2 {
-    text-align:center;
-    font-size:3.5rem;
-    background:linear-gradient(45deg, #00d4ff,#00ff9d);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    margin-bottom:2.5rem;
-}
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* Styles restants (services, why, testimonials, contact, footer) */
-#why { background:#111; text-align:center; }
-.why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; margin-top:3rem; }
-.why-item { background: rgba(255,255,255,0.04); padding:2rem; border-radius:12px; border:1px solid rgba(0,212,255,0.2); }
-.why-item h3 { color:#00ff9d; margin-bottom:1rem; font-size:1.5rem; }
+        h1, h2, h3 { font-family: 'Orbitron', sans-serif; }
 
-#services { background:#0a0a0a; }
-.intro-text { text-align:center; margin-bottom:1.5rem; font-size:1.25rem; color:#00ff9d; font-weight:500; }
-.intro-text.second { color:#ccc; font-weight:400; margin-bottom:3rem; }
-.services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
-.service-card {
-    background: rgba(255,255,255,0.04);
-    padding:2.2rem;
-    border-radius:12px;
-    border:1px solid rgba(0,212,255,0.3);
-    transition: all 0.4s ease;
-}
-.service-card:hover { border-color:#00ff9d; box-shadow:0 0 25px rgba(0,255,157,0.25); transform:translateY(-8px);}
-.service-card h3 { color:#00ff9d; font-size:1.6rem; margin-bottom:1.2rem; }
-.service-card p:last-child { margin-top:1.5rem; font-weight:600; color:#00d4ff; font-size:1.15rem; }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.92);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.15);
+        }
+        nav.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.2);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 0;
+        }
+        nav li { margin: 0; }
+        nav a {
+            color: #00d4ff;
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #00ff9d; }
 
-#testimonials { background:#000; }
-.testimonial { text-align:center; margin:2.5rem 0; font-style:italic; color:#bbb; font-size:1.2rem; max-width:700px; margin-left:auto; margin-right:auto; }
+        #hero {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #000 0%, #001122 100%);
+            position: relative;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%2300d4ff" stroke-width="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.08;
+        }
+        .hero-content {
+            text-align: center;
+            max-width: 960px;
+        }
+        .hero-content h1 {
+            font-size: 4.8rem;
+            background: linear-gradient(45deg, #00d4ff, #00ff9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.2rem;
+        }
+        .hero-content p {
+            font-size: 1.6rem;
+            margin: 0 auto 2.5rem auto;
+            max-width: 760px;
+            color: #ccc;
+        }
+        .cta {
+            background: linear-gradient(45deg, #00d4ff, #00ff9d);
+            color: #000;
+            padding: 1.2rem 2.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .cta:hover { transform: scale(1.06); box-shadow: 0 0 30px rgba(0, 212, 255, 0.5); }
 
-#contact { background:#0a0a0a; padding-top:2rem; }
-form { max-width:680px; margin:0 auto; }
-input, textarea { width:100%; padding:1.2rem; margin-bottom:1.5rem; background:#111; border:1px solid #00d4ff; color:white; border-radius:8px; font-size:1.1rem; }
-button { background:linear-gradient(45deg,#00d4ff,#00ff9d); color:#000; padding:1.3rem 3rem; border:none; border-radius:8px; font-weight:700; font-size:1.3rem; cursor:pointer; transition:all 0.3s; }
-button:hover { transform:scale(1.04); box-shadow:0 0 25px rgba(0,255,157,0.5); }
+        section { padding: 6rem 0; }
+        section h2 {
+            text-align: center;
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #00d4ff, #00ff9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2.5rem;
+        }
 
-footer { background:#000; text-align:center; padding:3rem 0; color:#888; font-size:1rem; }
-footer a { color:#00d4ff; transition:color 0.3s; }
-footer a:hover { color:#00ff9d; }
+        #why { background: #111; text-align: center; }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .why-item {
+            background: rgba(255,255,255,0.04);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        .why-item h3 { color: #00ff9d; margin-bottom: 1rem; font-size: 1.5rem; }
 
-/* Pop-up cookies */
-#cookie-consent {
-    position:fixed; bottom:20px; left:20px; right:20px;
-    background: rgba(0,0,0,0.95);
-    backdrop-filter:blur(10px);
-    border:1px solid #00d4ff; border-radius:12px;
-    padding:1.5rem;
-    color:#e0e0e0;
-    z-index:9999;
-    max-width:500px;
-    margin:0 auto;
-    box-shadow:0 10px 30px rgba(0,212,255,0.3);
-    font-size:0.95rem;
-    display:none;
-}
-#cookie-consent.show { display:block; }
-#cookie-consent p { margin-bottom:1rem; }
-#cookie-consent .buttons { display:flex; flex-wrap:wrap; gap:1rem; justify-content:flex-end; }
-#cookie-consent button { padding:0.7rem 1.4rem; border:none; border-radius:8px; font-weight:600; cursor:pointer; transition:all 0.3s; }
-#cookie-consent .accept { background:linear-gradient(45deg,#00d4ff,#00ff9d); color:#000; }
-#cookie-consent .reject { background:#333; color:#fff; }
-#cookie-consent .settings { background:#444; color:#00d4ff; }
-#cookie-consent button:hover { transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,255,157,0.3); }
+        #services { background: #0a0a0a; }
+        .intro-text {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            color: #00ff9d;
+            font-weight: 500;
+        }
+        .intro-text.second {
+            color: #ccc;
+            font-weight: 400;
+            margin-bottom: 3rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: rgba(255,255,255,0.04);
+            padding: 2.2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+        .service-card:hover {
+            border-color: #00ff9d;
+            box-shadow: 0 0 25px rgba(0, 255, 157, 0.25);
+            transform: translateY(-8px);
+        }
+        .service-card h3 { color: #00ff9d; font-size: 1.6rem; margin-bottom: 1.2rem; }
+        .service-card p:last-child {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: #00d4ff;
+            font-size: 1.15rem;
+        }
 
-@media(max-width:768px){
-    body{padding-top:110px;}
-    nav{padding:0.8rem 0;}
-    nav ul{gap:0.6rem;}
-    nav a{font-size:0.95rem; padding:0.4rem 0.8rem;}
-    .hero-content h1{font-size:3.2rem;}
-    section h2{font-size:2.8rem;}
-    #cookie-consent{bottom:10px; left:10px; right:10px; padding:1rem; font-size:0.9rem;}
-}
-</style>
+        #testimonials { background: #000; }
+        .testimonial {
+            text-align: center;
+            margin: 2.5rem 0;
+            font-style: italic;
+            color: #bbb;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #contact { background: #0a0a0a; padding-top: 2rem; }
+        form { max-width: 680px; margin: 0 auto; }
+        input, textarea {
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            background: #111;
+            border: 1px solid #00d4ff;
+            color: white;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+        button {
+            background: linear-gradient(45deg, #00d4ff, #00ff9d);
+            color: #000;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover { transform: scale(1.04); box-shadow: 0 0 25px rgba(0, 255, 157, 0.5); }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 3rem 0;
+            color: #888;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #00d4ff;
+            transition: color 0.3s;
+        }
+        footer a:hover { color: #00ff9d; }
+
+        /* Pop-up Cookies RGPD */
+        #cookie-consent {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #00d4ff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: #e0e0e0;
+            z-index: 9999;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            font-size: 0.95rem;
+            display: none;
+        }
+        #cookie-consent.show {
+            display: block;
+        }
+        #cookie-consent p {
+            margin-bottom: 1rem;
+        }
+        #cookie-consent .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        #cookie-consent button {
+            padding: 0.7rem 1.4rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #cookie-consent .accept {
+            background: linear-gradient(45deg, #00d4ff, #00ff9d);
+            color: #000;
+        }
+        #cookie-consent .reject {
+            background: #333;
+            color: #fff;
+        }
+        #cookie-consent .settings {
+            background: #444;
+            color: #00d4ff;
+        }
+        #cookie-consent button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 110px; }
+            nav { padding: 0.8rem 0; }
+            nav ul { gap: 0.6rem; }
+            nav a { font-size: 0.95rem; padding: 0.4rem 0.8rem; }
+            .hero-content h1 { font-size: 3.2rem; }
+            section h2 { font-size: 2.8rem; }
+            #cookie-consent { bottom: 10px; left: 10px; right: 10px; padding: 1rem; font-size: 0.9rem; }
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why">Pourquoi nous</a></li>
+            <li><a href="#testimonials">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<ul>
-<li><a href="#hero">Accueil</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#why">Pourquoi nous</a></li>
-<li><a href="#testimonials">Témoignages</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+    <section id="hero">
+        <div class="hero-content">
+            <img src="assets/logo.jpg" alt="NexLyn AI Solutions" style="width: 220px; margin-bottom: 1.5rem; filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.6));">
+            <h1>NexLyn AI Solutions</h1>
+            <p>Agents IA personnalisés ultra-performants pour booster votre PME, artisanat ou activité entrepreneuriale. Automatisez intelligemment, gagnez du temps et de l’argent.</p>
+            <a href="#contact" class="cta">Obtenez votre consultation gratuite</a>
+        </div>
+    </section>
 
-<section id="hero">
-<div class="hero-content">
-<img src="assets/logo.jpg" alt="NexLyn AI Solutions" style="width:220px;margin-bottom:1.5rem;filter:drop-shadow(0 0 15px rgba(0,212,255,0.6));">
-<h1>NexLyn AI Solutions</h1>
-<p>Agents IA personnalisés ultra-performants pour booster votre PME, artisanat ou activité entrepreneuriale. Automatisez intelligemment, gagnez du temps et de l’argent.</p>
-<a href="#contact" class="cta">Obtenez votre consultation gratuite</a>
-</div>
-</section>
+    <section id="services">
+        <div class="container">
+            <h2>Nos Services d'Agents IA</h2>
+            <p class="intro-text">Tarifs premium accessibles : 15–25 % moins chers que la moyenne du marché pour une qualité supérieure.</p>
+            <p class="intro-text second">Tous nos agents incluent maintenance, mises à jour IA et support prioritaire.</p>
 
-<!-- Sections Services, Why, Testimonials, Contact, Footer -->
-<!-- Pour garder le message clair, les sections suivent exactement ton code original -->
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Agents pour Répondre aux Appels</h3>
+                    <p>Gérez vos appels clients 24/7 avec des agents vocaux intelligents. Prises de RDV automatiques, support basique – parfait pour artisans et PME occupés.</p>
+                    <p><strong>Setup : 990 € • Abonnement : 189 €/mois</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Gestion des Réseaux Sociaux</h3>
+                    <p>Agents qui postent, interagissent et analysent vos réseaux (X, Instagram, LinkedIn). Contenu engageant généré par IA pour booster votre visibilité.</p>
+                    <p><strong>Setup : 790 € • Abonnement : 159 €/mois</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Agents E-Commerce</h3>
+                    <p>Recommandations produits, chatbots de vente, gestion stock prédictive. Augmentez vos ventes en ligne sans effort supplémentaire.</p>
+                    <p><strong>Setup : 1490 € • Abonnement : 249 €/mois</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Agents Marketing & Leads</h3>
+                    <p>Génération de leads automatisée, emails personnalisés, A/B testing. Attirez plus de clients pour votre entreprise.</p>
+                    <p><strong>Setup : 1290 € • Abonnement : 229 €/mois</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Agents Support Client</h3>
+                    <p>Chatbots 24/7 pour FAQ, tickets et satisfaction. Réduisez vos coûts de support de 70% pour PME et entrepreneurs.</p>
+                    <p><strong>Setup : 890 € • Abonnement : 169 €/mois</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Agents Finance & Compta</h3>
+                    <p>Suivi factures, prévisions budgétaires, conformité RGPD. Simplifiez votre gestion financière en un clic.</p>
+                    <p><strong>Setup : 1790 € • Abonnement : 299 €/mois</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Agents Contenu Créatif</h3>
+                    <p>Génération de posts, vidéos courtes et SEO optimisé. Créez du contenu pro pour vos réseaux sans équipe dédiée.</p>
+                    <p><strong>Setup : 990 € • Abonnement : 189 €/mois</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Agents Personnalisés</h3>
+                    <p>Tout type d'agent sur mesure (RH, analyse données, etc.). Adapté à vos besoins spécifiques en tant qu'artisan ou entrepreneur.</p>
+                    <p><strong>À partir de 1490 € setup + 249 €/mois</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Pop-up cookies -->
-<div id="cookie-consent">
-<p>Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic (RGPD). Vous pouvez accepter, refuser ou personnaliser.</p>
-<div class="buttons">
-<button class="settings" onclick="showCookieSettings()">Paramètres</button>
-<button class="reject" onclick="rejectCookies()">Refuser</button>
-<button class="accept" onclick="acceptCookies()">Accepter</button>
-</div>
-</div>
+    <section id="why">
+        <div class="container">
+            <h2>Pourquoi choisir NexLyn AI Solutions ?</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>100% personnalisé</h3>
+                    <p>Chaque agent est conçu sur mesure pour répondre exactement à vos besoins et à votre activité, sans solution générique.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Support en français</h3>
+                    <p>Accompagnement humain en français, rapide et sans barrière linguistique.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Mises à jour IA incluses</h3>
+                    <p>Vos agents évoluent avec les dernières avancées IA sans coût supplémentaire.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Tarifs transparents et accessibles</h3>
+                    <p>Pas de frais cachés, prix 15–25 % inférieurs au marché pour une qualité premium.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-// Smooth scroll
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-        anchor.addEventListener('click', function(e){
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target){
-                const offset = 120;
-                const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({top:pos, behavior:'smooth'});
-            }
+    <section id="testimonials">
+        <div class="container">
+            <h2>Ce Que Disent Nos Clients</h2>
+            <div class="testimonial">
+                <p>"L'agent appels a révolutionné mon atelier d'artisan ! Plus de RDV manqués et un service client 24/7."</p>
+                <p style="margin-top: 0.8rem; color: #00ff9d;">– Marie, Artisane</p>
+            </div>
+            <div class="testimonial">
+                <p>"+35 % d'engagement sur mes réseaux sociaux en 2 mois grâce à l'agent automatisé. Excellent rapport qualité-prix."</p>
+                <p style="margin-top: 0.8rem; color: #00ff9d;">– Julien, Entrepreneur</p>
+            </div>
+            <div class="testimonial">
+                <p>"Les agents finance m'ont fait gagner 20 h/semaine. Parfait pour un solo-entrepreneur comme moi."</p>
+                <p style="margin-top: 0.8rem; color: #00ff9d;">– Sophie, Freelance</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-Nous</h2>
+            <p style="text-align: center; margin-bottom: 2.5rem; font-size: 1.3rem;">Obtenez une consultation gratuite et personnalisée pour votre projet IA.</p>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email professionnel" required>
+                <input type="text" name="business" placeholder="Votre entreprise / Activité (ex. artisanat, e-commerce, services)" required>
+                <textarea name="message" placeholder="Décrivez brièvement vos besoins (ex. agent pour appels, réseaux sociaux, compta...)" rows="6" required></textarea>
+                <button type="submit">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 NexLyn AI Solutions – Tous droits réservés | <a href="https://www.nexlyn-ai.com">www.nexlyn-ai.com</a></p>
+    </footer>
+
+    <!-- Pop-up Cookies RGPD -->
+    <div id="cookie-consent">
+        <p>Ce site utilise des cookies pour améliorer votre expérience et analyser le trafic (RGPD). Vous pouvez accepter, refuser ou personnaliser.</p>
+        <div class="buttons">
+            <button class="settings" onclick="showCookieSettings()">Paramètres</button>
+            <button class="reject" onclick="rejectCookies()">Refuser</button>
+            <button class="accept" onclick="acceptCookies()">Accepter</button>
+        </div>
+    </div>
+
+    <script>
+        // Gestion des cookies RGPD
+        function hasConsent() {
+            return localStorage.getItem('cookieConsent') !== null;
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            localStorage.setItem('cookieTimestamp', Date.now());
+            document.getElementById('cookie-consent').classList.remove('show');
+            // Ici tu peux activer Google Analytics, scripts tiers, etc.
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('cookieTimestamp', Date.now());
+            document.getElementById('cookie-consent').classList.remove('show');
+            // Pas de tracking
+        }
+
+        function showCookieSettings() {
+            alert('Paramètres avancés : pour l’instant, nous utilisons uniquement des cookies fonctionnels et analytiques anonymes. Pas de publicité ni de profilage. Vous pouvez effacer vos choix via les paramètres du navigateur.');
+        }
+
+        // Afficher la pop-up si pas de consentement ou expiré (6 mois)
+        const consentTime = localStorage.getItem('cookieTimestamp');
+        if (!hasConsent() || (consentTime && Date.now() - consentTime > 6 * 30 * 24 * 60 * 60 * 1000)) {
+            document.getElementById('cookie-consent').classList.add('show');
+        }
+
+        // Smooth scroll avec offset
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 120;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
-    });
-});
 
-// Navbar scroll effect
-window.addEventListener('scroll', ()=>{document.querySelector('nav').classList.toggle('scrolled', window.scrollY>50);});
-
-// Cookies RGPD
-function hasConsent(){ return localStorage.getItem('cookieConsent')!==null; }
-function acceptCookies(){ localStorage.setItem('cookieConsent','accepted'); localStorage.setItem('cookieTimestamp',Date.now()); document.getElementById('cookie-consent').classList.remove('show'); }
-function rejectCookies(){ localStorage.setItem('cookieConsent','rejected'); localStorage.setItem('cookieTimestamp',Date.now()); document.getElementById('cookie-consent').classList.remove('show'); }
-function showCookieSettings(){ alert('Paramètres avancés : cookies fonctionnels et analytiques anonymes. Pas de pub ni de profilage.'); }
-const consentTime = localStorage.getItem('cookieTimestamp');
-if(!hasConsent() || (consentTime && Date.now() - consentTime > 6*30*24*60*60*1000)){ document.getElementById('cookie-consent').classList.add('show'); }
-</script>
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
 </body>
 </html>
